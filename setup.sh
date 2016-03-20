@@ -8,7 +8,7 @@
 
 dir=~/dotfiles
 olddir=~/dotfiles_old
-rcfiles="vimrc tmux.conf"
+rcfiles="vimrc tmux.conf zshrc"
 
 # Creating dotfiles_old in homedir
 echo "Creating $olddir for backup of any existing dotfiles in ~"
@@ -17,7 +17,7 @@ echo "..done"
 
 for file in $rcfiles; do
 	echo "Moving old dotfile to $olddir"
-  mv ~/.$file $olddir	
+  cp ~/.$file $olddir	
 	echo "Creating symlink to $file in home dir"
 	ln -s $dir/$file ~/.$file
 done
