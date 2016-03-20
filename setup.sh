@@ -28,4 +28,5 @@ mv ~/.vim $olddir
 cp -r $dir/vim ~/.vim
 
 # echo "Add some useful"
-/bin/zsh
+#/bin/zsh
+tmux 
