@@ -17,7 +17,7 @@ echo "..done"
 
 for file in $rcfiles; do
 	echo "Moving old dotfile to $olddir"
-  cp ~/.$file $olddir	
+  mv ~/.$file $olddir	
 	echo "Creating symlink to $file in home dir"
 	ln -s $dir/$file ~/.$file
 done
@@ -28,4 +28,4 @@ mv ~/.vim $olddir
 cp -r $dir/vim ~/.vim
 
 # echo "Add some useful"
-chsh -s /bin/zsh
+/bin/zsh
