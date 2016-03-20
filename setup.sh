@@ -25,7 +25,7 @@ done
 # Vim setup
 echo "Moving old .vim to $olddir"
 mv ~/.vim $olddir
-cp $dir/vim ~/.vim
+cp -r $dir/vim ~/.vim
 
 # echo "Add some useful"
 chsh -s /bin/zsh
