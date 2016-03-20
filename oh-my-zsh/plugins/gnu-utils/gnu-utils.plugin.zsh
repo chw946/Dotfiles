@@ -29,10 +29,7 @@ if [[ -x "${commands[gwhoami]}" ]]; then
     'gunexpand' 'guniq' 'gunlink' 'guptime' 'gusers' 'gvdir' 'gwc' 'gwho'
     'gwhoami' 'gyes')
 
-    # findutils
-    gcmds+=('gfind' 'gxargs' 'glocate')
-
-    # Not part of either coreutils or findutils, installed separately.
+    # Not part of coreutils, installed separately.
     gcmds+=('gsed' 'gtar' 'gtime')
 
     for gcmd in "${gcmds[@]}"; do

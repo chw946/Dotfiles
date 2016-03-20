@@ -32,12 +32,11 @@ function check_git_prompt_info() {
 
 # Determine if we are using a gemset.
 function rvm_gemset() {
-    if hash rvm 2>/dev/null; then
-        GEMSET=`rvm gemset list | grep '=>' | cut -b4-`
-        if [[ -n $GEMSET ]]; then
-            echo "%{$fg[yellow]%}$GEMSET%{$reset_color%}|"
-        fi 
-    fi
+    GEMSET=`rvm gemset list | grep '=>' | cut -b4-`
+    if [[ -n $GEMSET ]]; then
+        echo "%{$fg[yellow]%}$GEMSET%{$reset_color%}|"
+    fi 
+
 }
 
 # Determine the time since last commit. If branch is clean,

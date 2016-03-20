@@ -1,7 +1,6 @@
 # start fbterm automatically in /dev/tty*
 
-if (( ${+commands[fbterm]} )); then
-	if [[ "$TTY" = /dev/tty* ]] ; then
-		fbterm && exit
-	fi
+if [[ $(tty|grep -o '/dev/tty') = /dev/tty ]] ; then
+	fbterm
+	exit
 fi

@@ -1,24 +1,24 @@
 # mvn-color based on https://gist.github.com/1027800
-BOLD=`tput bold`
-UNDERLINE_ON=`tput smul`
-UNDERLINE_OFF=`tput rmul`
-TEXT_BLACK=`tput setaf 0`
-TEXT_RED=`tput setaf 1`
-TEXT_GREEN=`tput setaf 2`
-TEXT_YELLOW=`tput setaf 3`
-TEXT_BLUE=`tput setaf 4`
-TEXT_MAGENTA=`tput setaf 5`
-TEXT_CYAN=`tput setaf 6`
-TEXT_WHITE=`tput setaf 7`
-BACKGROUND_BLACK=`tput setab 0`
-BACKGROUND_RED=`tput setab 1`
-BACKGROUND_GREEN=`tput setab 2`
-BACKGROUND_YELLOW=`tput setab 3`
-BACKGROUND_BLUE=`tput setab 4`
-BACKGROUND_MAGENTA=`tput setab 5`
-BACKGROUND_CYAN=`tput setab 6`
-BACKGROUND_WHITE=`tput setab 7`
-RESET_FORMATTING=`tput sgr0`
+export BOLD=`tput bold`
+export UNDERLINE_ON=`tput smul`
+export UNDERLINE_OFF=`tput rmul`
+export TEXT_BLACK=`tput setaf 0`
+export TEXT_RED=`tput setaf 1`
+export TEXT_GREEN=`tput setaf 2`
+export TEXT_YELLOW=`tput setaf 3`
+export TEXT_BLUE=`tput setaf 4`
+export TEXT_MAGENTA=`tput setaf 5`
+export TEXT_CYAN=`tput setaf 6`
+export TEXT_WHITE=`tput setaf 7`
+export BACKGROUND_BLACK=`tput setab 0`
+export BACKGROUND_RED=`tput setab 1`
+export BACKGROUND_GREEN=`tput setab 2`
+export BACKGROUND_YELLOW=`tput setab 3`
+export BACKGROUND_BLUE=`tput setab 4`
+export BACKGROUND_MAGENTA=`tput setab 5`
+export BACKGROUND_CYAN=`tput setab 6`
+export BACKGROUND_WHITE=`tput setab 7`
+export RESET_FORMATTING=`tput sgr0`
 
  
 # Wrapper function for Maven's mvn command.
@@ -44,29 +44,19 @@ mvn-color()
 # aliases
 alias mvncie='mvn clean install eclipse:eclipse'
 alias mvnci='mvn clean install'
-alias mvncist='mvn clean install -DskipTests'
 alias mvne='mvn eclipse:eclipse'
 alias mvnce='mvn clean eclipse:clean eclipse:eclipse'
 alias mvnd='mvn deploy'
 alias mvnp='mvn package'
 alias mvnc='mvn clean'
 alias mvncom='mvn compile'
-alias mvnct='mvn clean test'
 alias mvnt='mvn test'
 alias mvnag='mvn archetype:generate'
-alias mvn-updates='mvn versions:display-dependency-updates'
-alias mvntc7='mvn tomcat7:run' 
-alias mvntc='mvn tomcat:run'
-alias mvnjetty='mvn jetty:run'
-alias mvndt='mvn dependency:tree'
-alias mvns='mvn site'
-alias mvnsrc='mvn dependency:sources'
-alias mvndocs='mvn dependency:resolve -Dclassifier=javadoc'
 
 function listMavenCompletions { 
      reply=(
         # common lifecycle
-        clean process-resources compile process-test-resources test-compile test integration-test package verify install deploy site
+        clean process-resources compile process-test-resources test-compile test package verify install deploy site
         
         # common plugins
         deploy failsafe install site surefire checkstyle javadoc jxr pmd ant antrun archetype assembly dependency enforcer gpg help release repository source eclipse idea jetty cargo jboss tomcat tomcat6 tomcat7 exec versions war ear ejb android scm buildnumber nexus repository sonar license hibernate3 liquibase flyway gwt
@@ -131,10 +121,6 @@ function listMavenCompletions {
         tomcat6:run tomcat6:run-war tomcat6:run-war-only tomcat6:stop tomcat6:deploy tomcat6:undeploy
         # tomcat7
         tomcat7:run tomcat7:run-war tomcat7:run-war-only tomcat7:deploy
-	# tomee
-        tomee:run tomee:run-war tomee:run-war-only tomee:stop tomee:deploy tomee:undeploy	
-        # spring-boot
-        spring-boot:run spring-boot:repackage
         # exec
         exec:exec exec:java
         # versions

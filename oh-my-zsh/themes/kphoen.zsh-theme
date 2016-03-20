@@ -1,4 +1,11 @@
-# kphoen.zsh-theme
+# ------------------------------------------------------------------------------
+#          FILE:  kphoen.zsh-theme
+#   DESCRIPTION:  oh-my-zsh theme file.
+#        AUTHOR:  Kévin Gomez (geek63@gmail.com)
+#       VERSION:  1.0.0
+#    SCREENSHOT:
+# ------------------------------------------------------------------------------
+
 
 if [[ "$TERM" != "dumb" ]] && [[ "$DISABLE_LS_COLORS" != "true" ]]; then
     PROMPT='[%{$fg[red]%}%n%{$reset_color%}@%{$fg[magenta]%}%m%{$reset_color%}:%{$fg[blue]%}%~%{$reset_color%}$(git_prompt_info)]
