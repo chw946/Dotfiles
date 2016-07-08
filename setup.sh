@@ -5,6 +5,8 @@
 # Setup all dotfiles from github and move old files to dotfiles_old
 ##############################################################################
  
+# brew install tmux
+# brew install zsh zsh-completions
 
 dir=~/dotfiles
 olddir=~/dotfiles_old

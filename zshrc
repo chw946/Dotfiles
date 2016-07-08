@@ -1,12 +1,10 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/home/chenhung/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
-
-# set PATH so it includes user's private bin if it exists
+ZSH_THEME="dpoggi"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -48,26 +46,6 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
-# User configuration
-
-export PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:/Users/chenhung/google-cloud-sdk/bin:/opt/local/bin:/opt/local/sbin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/usr/local/bin:/Users/chenhung/anaconda/bin:/Users/chenhung/.rvm/gems/ruby-2.0.0-p247/bin:/Users/chenhung/.rvm/gems/ruby-2.0.0-p247@global/bin:/Users/chenhung/.rvm/rubies/ruby-2.0.0-p247/bin:/Users/chenhung/.rvm/bin:/sw/bin:/sw/sbin:/Users/chenhung/sfw/darwin/openmpi/1.6.5/bin:/opt/subversion/bin:/sw/bin/init.sh:/usr/local/cuda/bin:/usr/texbin:/usr/local/bin:/usr/local/Cellar/fftw/3.3.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/usr/local/git/bin:/opt/ImageMagick/bin:/usr/texbin:/usr/X11R6/bin"
-# export MANPATH="/usr/local/man:$MANPATH"
-
 source $ZSH/oh-my-zsh.sh
-export BOOST_INCLUDE=/path/to/boost/include
-export PETSC_DIR=$HOME/sfw/petsc/3.6.3
-export PETSC_ARCH=linux-opt
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+export PATH="$HOME/bin:$PATH"
+alias cpplint="$HOME/codes/cpplint.py"

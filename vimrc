@@ -17,7 +17,7 @@ filetype on
 filetype indent on
 filetype plugin on
 hi link htmlLink NONE
-"set guifont=Menlo\ Regular:h15
+set guifont=Menlo\ Regular:h15
 map <f9> :Tlist<CR>
 nnoremap <silent> <F5> :NERDTree<CR>
 autocmd FileType python set makeprg=pylint\ --reports=n\ --msg-template=\"{path}:{line}:\ {msg_id}\ {symbol},\ {obj}\ {msg}\"\ %:p
