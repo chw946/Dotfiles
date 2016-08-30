@@ -4,7 +4,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
-ZSH_THEME="robbyrussell"
+# ZSH_THEME="robbyrussell"
 ZSH_THEME="dpoggi"
 
 # Uncomment the following line to use case-sensitive completion.
@@ -53,12 +53,7 @@ export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/opt/airb
 # Add RVM to PATH for scripting
 export PATH="$PATH:$HOME/.rvm/bin:$HOME/bin"
 # Export the JAVA7_HOME and JAVA8_HOME environment variables
-export JAVA7_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home
-export JAVA8_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home
-export JAVA_HOME=$JAVA8_HOME
-export PATH=$JAVA_HOME/bin:$PATH
 
-alias sl=sl -e
 alias ccat=pygmentize -g -O style=colorful,linenos=1
 alias gs="git status"
 alias gnublack="gnuplot -background black -xrm 'gnuplot*textColor:white' -xrm 'gnuplot*borderColor:white'"
