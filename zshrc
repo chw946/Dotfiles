@@ -60,6 +60,5 @@ export PATH=$JAVA_HOME/bin:$PATH
 
 alias sl=sl -e
 alias ccat=pygmentize -g -O style=colorful,linenos=1
-alias ctags="`brew --prefix`/bin/ctags"
 alias gs="git status"
 alias gnublack="gnuplot -background black -xrm 'gnuplot*textColor:white' -xrm 'gnuplot*borderColor:white'"
