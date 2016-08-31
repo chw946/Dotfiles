@@ -1,12 +1,14 @@
 #!/bin/bash
 
 ##############################################################################
-# setup.sh 
+# setup.sh
 # Setup all dotfiles from github and move old files to dotfiles_old
 ##############################################################################
- 
-# brew install tmux
-# brew install zsh zsh-completions
+
+curl -L http://install.ohmyz.sh | sh
+cd ~/.oh-my-zsh && git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
+cd
+
 
 dir=~/dotfiles
 olddir=~/dotfiles_old
@@ -19,7 +21,7 @@ echo "..done"
 
 for file in $rcfiles; do
 	echo "Moving old dotfile to $olddir"
-  mv ~/.$file $olddir	
+  mv ~/.$file $olddir
 	echo "Creating symlink to $file in home dir"
 	ln -s $dir/$file ~/.$file
 done
@@ -31,4 +33,4 @@ cp -r $dir/vim ~/.vim
 
 # echo "Add some useful"
 #/bin/zsh
-tmux 
+tmux

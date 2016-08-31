@@ -5,7 +5,8 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # ZSH_THEME="robbyrussell"
-ZSH_THEME="dpoggi"
+# ZSH_THEME="dpoggi"
+ZSH_THEME="chw"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
