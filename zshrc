@@ -4,8 +4,6 @@ export ZSH=$HOME/.oh-my-zsh
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
-# ZSH_THEME="robbyrussell"
-# ZSH_THEME="dpoggi"
 ZSH_THEME="chw"
 
 # Uncomment the following line to use case-sensitive completion.
@@ -49,7 +47,7 @@ ZSH_THEME="chw"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/opt/airbnb/bin:/usr/local/munki:"
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
 
 # Add RVM to PATH for scripting
 export PATH="$PATH:$HOME/.rvm/bin:$HOME/bin"
