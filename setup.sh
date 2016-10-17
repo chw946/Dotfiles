@@ -10,9 +10,9 @@ cd ~/.oh-my-zsh && git clone git://github.com/zsh-users/zsh-syntax-highlighting.
 cd
 
 
-dir=~/dotfiles
+dir=~/Dotfiles
 olddir=~/dotfiles_old
-rcfiles="vimrc tmux.conf zshrc"
+rcfiles="vimrc tmux.conf zshrc bash_profile"
 
 # Creating dotfiles_old in homedir
 echo "Creating $olddir for backup of any existing dotfiles in ~"
@@ -24,6 +24,7 @@ for file in $rcfiles; do
   mv ~/.$file $olddir
 	echo "Creating symlink to $file in home dir"
 	ln -s $dir/$file ~/.$file
+  ln -s $dir/chw.zsh-theme ~/.oh-my-zsh/themes/chw.zsh-theme
 done
 
 # Vim setup
