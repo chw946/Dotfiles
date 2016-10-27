@@ -9,7 +9,6 @@ curl -L http://install.ohmyz.sh | sh
 cd ~/.oh-my-zsh && git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
 cd
 
-
 dir=~/Dotfiles
 olddir=~/dotfiles_old
 rcfiles="vimrc tmux.conf zshrc bash_profile"
