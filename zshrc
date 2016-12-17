@@ -55,4 +55,5 @@ export PATH="$PATH:$HOME/.rvm/bin:$HOME/bin"
 
 alias ccat=pygmentize -g -O style=colorful,linenos=1
 alias gs="git status"
+alias gpr="git pull --rebase"
 alias gnublack="gnuplot -background black -xrm 'gnuplot*textColor:white' -xrm 'gnuplot*borderColor:white'"
