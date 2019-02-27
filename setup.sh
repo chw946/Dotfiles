@@ -5,6 +5,11 @@
 # Setup all dotfiles from github and move old files to dotfiles_old
 ##############################################################################
 
+# Get server name and put in the zsh_theme
+echo "Input server name $sname"
+read sname
+sed -i -e 's/SNAME/$sname/g' chw.zsh-theme
+
 curl -L http://install.ohmyz.sh | sh
 cd ~/.oh-my-zsh && git clone git://github.com/zsh-users/zsh-syntax-highlighting.git
 cd
