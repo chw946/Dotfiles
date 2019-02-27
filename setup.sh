@@ -5,7 +5,7 @@
 # Setup all dotfiles from github and move old files to dotfiles_old
 ##############################################################################
 
-# Get server name and put in the zsh_theme
+# Get the server name and put in the zsh_theme
 echo "Input server name $sname"
 read sname
 sed -i -e 's/SNAME/$sname/g' chw.zsh-theme
