@@ -1,12 +1,14 @@
 set ruler
 set nu
-set nocompatible
+set nocompatible  " use vim defaults
+set scrolloff=3   " keep 3 lines when scrolling
 set tabstop=2
 set shiftwidth=2
 set expandtab
 set autoindent
 set hlsearch
 set t_Co=256
+set colorcolumn=80
 
 syntax on
 colorscheme koehler
@@ -18,7 +20,11 @@ filetype plugin indent on
 hi link htmlLink NONE
 set guifont=Menlo\ Regular:h15
 map <f9> :Tlist<CR>
-nnoremap <silent> <F5> :NERDTree<CR>
+map <C-n> :NERDTreeToggle<CR>
+
+" Insert mode map jk, kj to <Esc>
+imap jk <Esc>
+imap kj <Esc>
 
 "Open automatically when vim starts
 autocmd FileType python set makeprg=pylint\ --reports=n\ --msg-template=\"{path}:{line}:\ {msg_id}\ {symbol},\ {obj}\ {msg}\"\ %:p
@@ -62,9 +68,52 @@ autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
+autocmd BufWritePre * %s/\s\+$//e
 
-""""""""""Ctags""""""""""
-map <C-A> :!ctags -h ".scala" -R .<CR>
-set tags=tags;/
-map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
-map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+""""""""""Hive""""""""""
+au BufNewFile,BufRead *.hql set filetype=hive expandtab
+au BufNewFile,BufRead *.q set filetype=hive expandtab
+
+""""""""""Vundle""""""""""
+filetype off  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+Plugin 'tpope/vim-fugitive'
+" plugin from http://vim-scripts.org/vim/scripts.html
+" Plugin 'L9'
+" Git plugin not hosted on GitHub
+Plugin 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+"Plugin 'file:///home/gmarik/path/to/plugin'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+
+" Install L9 and avoid a Naming conflict if you've already installed a
+" different version somewhere else.
+" Plugin 'ascenator/L9', {'name': 'newL9'}
+Plugin 'zxqfl/tabnine-vim'
+Plugin 'tpope/vim-surround'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+"""""""""""YouCompleteMe""""""""""""
+" Go to definition else declaration
+nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+" Auto use completion
+let g:ycm_key_invoke_completion = '<C-a>'
+highlight PMenu ctermfg=0 ctermbg=242 guifg=black guibg=darkgrey
+highlight PMenuSel ctermfg=242 ctermbg=8 guifg=darkgrey guibg=black

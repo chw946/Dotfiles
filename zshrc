@@ -5,6 +5,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 ZSH_THEME="chw"
+#ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -44,16 +45,20 @@ ZSH_THEME="chw"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+  chucknorris
+  fzf
+  git
+  kubectl
+  osx
+  z
+)
 
+source ~/.bash_profile
 source $ZSH/oh-my-zsh.sh
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
 
-# Add RVM to PATH for scripting
-export PATH="$PATH:$HOME/.rvm/bin:$HOME/bin"
-# Export the JAVA7_HOME and JAVA8_HOME environment variables
+source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
+PROMPT='$(kube_ps1)'$PROMPT
 
-alias ccat=pygmentize -g -O style=colorful,linenos=1
-alias gs="git status"
-alias gpr="git pull --rebase"
-alias gnublack="gnuplot -background black -xrm 'gnuplot*textColor:white' -xrm 'gnuplot*borderColor:white'"
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"

@@ -1,4 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/Users/chen-hung_wu/.vim'
-let g:netrw_dirhist_2='/Users/chen-hung_wu/codes/shell'
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/Users/chen/repos/spinner/venv'
+let g:netrw_dirhist_2='/Users/chen/repos/spinner/scripts'
+let g:netrw_dirhist_3='/Users/chen/repos/spinner/jobs/modeling/revenue_forecasting/scripts'
+let g:netrw_dirhist_4='/Users/chen/repos/spinner/jobs/modeling/revenue_forecasting'
+let g:netrw_dirhist_5='/Users/chen/repos/spinner/jobs/modeling/revenue_forecasting/scripts'
+let g:netrw_dirhist_6='/Users/chen/repos/spinner/dev'
