@@ -5,13 +5,12 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 ZSH_THEME="chw"
-#ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
@@ -45,20 +44,18 @@ ZSH_THEME="chw"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  chucknorris
-  fzf
-  git
-  kubectl
-  osx
-  z
-)
+plugins=(git)
 
-source ~/.bash_profile
 source $ZSH/oh-my-zsh.sh
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
 
-source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
-PROMPT='$(kube_ps1)'$PROMPT
+# Add RVM to PATH for scripting
+export PATH="$PATH:$HOME/.rvm/bin:$HOME/bin"
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+alias gs="git status"
+alias gpr="git pull --rebase"
+
+# Yarn logs
+yl() {
+  yarn logs -applicationId $1 > _log; vim _log
+}
