@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# Fish-like autosuggestions for zsh
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh

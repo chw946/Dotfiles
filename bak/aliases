@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+# Colored less
+alias less="less -R"
+
+# Git Related
+alias gcm="git checkout master"
+alias gpr="git pull --rebase"
+alias gs="git status"
+alias ptt="ssh bbsu@ptt.cc"
+alias squish="git status && git commit -a --amend -C HEAD"
+alias gitk-text='git log --graph --pretty="tformat:%C(yellow)%h%Creset %Cgreen(%ar)%Creset %C(bold blue)<%an>%Creset %C(red)%d%Creset %s"'
+
+# Gnuplot
+alias gnublack="gnuplot -background black -xrm 'gnuplot*textColor:white' -xrm 'gnuplot*borderColor:white'"
+
+# Hexo
+alias hs="cd ~/chwlab/notes; hexo clean; hexo g; hexo s"
+
+# Neovim
+alias vim="nvim"
+alias vimdiff="nvim -d"
+alias mvim="gvim"
+
+# Chuck Norris
+alias wisdom="chuck | cowsay"
+
+# CheatSheat
+alias cht="cht.sh"

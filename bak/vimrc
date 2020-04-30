@@ -1,0 +1,125 @@
+set ruler
+set nu
+set nocompatible  " use vim defaults
+set scrolloff=3   " keep 3 lines when scrolling
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set autoindent
+set hlsearch
+set t_Co=256
+set colorcolumn=80
+
+syntax on
+colorscheme koehler
+
+" Sets CursorLine color to a smooth background, no underline
+set cursorline cursorcolumn
+filetype on
+filetype plugin indent on
+hi link htmlLink NONE
+set guifont=Menlo\ Regular:h15
+map <f9> :Tlist<CR>
+map <C-n> :NERDTreeToggle<CR>
+
+" Insert mode map jk, kj to <Esc>
+imap jk <Esc>
+imap kj <Esc>
+
+"Open automatically when vim starts
+autocmd FileType python set makeprg=pylint\ --reports=n\ --msg-template=\"{path}:{line}:\ {msg_id}\ {symbol},\ {obj}\ {msg}\"\ %:p
+autocmd FileType python set errorformat=%f:%l:\ %m
+autocmd Filetype python setlocal ts=4 sts=4 sw=4
+
+let g:pylint_onwrite = 0
+call pathogen#infect()
+call pathogen#helptags()
+let g:syntastic_mode_map = { 'mode': 'passive' }
+let Tlist_Ctags_Cmd = "/usr/local/bin/ctags"
+let Tlist_WinWidth = 50
+
+"""""""""""""""""Taglist"""""""""""""""""
+let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
+map <F4> :TlistToggle<cr>
+let Tlist_Use_Right_Window=0
+let Tlist_Show_One_File=1
+let Tlist_File_Fold_Auto_Close=1
+let Tlist_Exit_OnlyWindow=1
+
+""""""""""""""Disable Arrows""""""""""""""
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+
+inoremap <Up> <Nop>
+inoremap <Down> <Nop>
+inoremap <Left> <Nop>
+inoremap <Right> <Nop>
+
+""""""""""""Hive syntax highlight""""""""""""
+au BufNewFile,BufRead *.hql set filetype=hive expandtab
+au BufNewFile,BufRead *.q set filetype=hive expandtab
+
+"""""""Highlight trailing whitespace"""""""
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+autocmd BufWritePre * %s/\s\+$//e
+
+""""""""""Hive""""""""""
+au BufNewFile,BufRead *.hql set filetype=hive expandtab
+au BufNewFile,BufRead *.q set filetype=hive expandtab
+
+""""""""""Vundle""""""""""
+filetype off  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+Plugin 'tpope/vim-fugitive'
+" plugin from http://vim-scripts.org/vim/scripts.html
+" Plugin 'L9'
+" Git plugin not hosted on GitHub
+Plugin 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+"Plugin 'file:///home/gmarik/path/to/plugin'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+
+" Install L9 and avoid a Naming conflict if you've already installed a
+" different version somewhere else.
+" Plugin 'ascenator/L9', {'name': 'newL9'}
+Plugin 'zxqfl/tabnine-vim'
+Plugin 'tpope/vim-surround'
+
+" Vim go
+Plugin 'fatih/vim-go'
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+"""""""""""YouCompleteMe""""""""""""
+" Go to definition else declaration
+nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+" Auto use completion
+let g:ycm_key_invoke_completion = '<C-a>'
+highlight PMenu ctermfg=0 ctermbg=242 guifg=black guibg=darkgrey
+highlight PMenuSel ctermfg=242 ctermbg=8 guifg=darkgrey guibg=black
+
+"""""" Clear serach highlighting
+nnoremap <silent> <C-L> :nohlsearch<CR><C-L>

@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+# open and locat file via vim
+vil() {
+  vim $(locate $1)
+}
+
+# open and locat file via mvim
+mvil() {
+  mvim $(locate $1)
+}
+
+# Compute date differecne
+datediff() {
+    d1=$(gdate -d "$1" +%s)
+    d2=$(gdate -d "$2" +%s)
+    echo $(( (d1 - d2) / 86400 )) days
+}
